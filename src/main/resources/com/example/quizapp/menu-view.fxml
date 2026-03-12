@@ -23,7 +23,7 @@
                    styleClass="title-label"/>
 
             <!-- Texte de présentation -->
-            <Label text="Bienvenue dans l'application de quiz. Choisissez un thème pour lancer un quiz ou créez vos propres questions pour entraîner les étudiants."
+            <Label text="Bienvenue dans l'application de quiz. Choisissez un thème pour lancer un quiz."
                    wrapText="true"
                    maxWidth="520"
                    styleClass="body-text"/>
@@ -77,3 +77,4 @@
     </center>
 
 </BorderPane>
+

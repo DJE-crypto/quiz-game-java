@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.quizapp.MenuController"
+            styleClass="main-pane">
+
+    <!-- TOUT le contenu dans une carte centrale comme le login -->
+    <center>
+        <VBox spacing="18"
+              alignment="TOP_CENTER"
+              styleClass="card auth-card">
+            <padding>
+                <Insets top="25" right="40" bottom="25" left="40"/>
+            </padding>
+
+            <!-- Titre dynamique : "Bienvenue, X (Administrateur)" -->
+            <Label fx:id="welcomeLabel"
+                   styleClass="title-label"/>
+
+            <!-- Texte de présentation -->
+            <Label text="Bienvenue dans l'application de quiz. Choisissez un thème pour lancer un quiz ou créez vos propres questions pour entraîner les étudiants."
+                   wrapText="true"
+                   maxWidth="520"
+                   styleClass="body-text"/>
+
+            <!-- Choix du thème -->
+            <VBox spacing="8" alignment="CENTER_LEFT" maxWidth="520">
+                <Label text="Choisissez un thème :"
+                       styleClass="subtitle-label"/>
+
+                <ComboBox fx:id="themeComboBox"
+                          promptText="Sélectionner un thème"
+                          prefWidth="260"/>
+            </VBox>
+
+            <Separator maxWidth="520"/>
+
+            <!-- Liste des quiz -->
+            <VBox spacing="8" alignment="CENTER_LEFT" maxWidth="520">
+                <Label text="Quiz disponibles :"
+                       styleClass="subtitle-label"/>
+
+                <ListView fx:id="quizListView"
+                          prefHeight="220"/>
+            </VBox>
+
+            <!-- Boutons -->
+            <HBox alignment="CENTER" spacing="20">
+                <Button fx:id="startQuizButton"
+                        text="Commencer le quiz"
+                        onAction="#handleStartQuiz"
+                        prefWidth="200"/>
+
+                <Button fx:id="createQuizButton"
+                        text="Créer un quiz"
+                        onAction="#handleCreateQuiz"
+                        prefWidth="200"
+                        styleClass="secondary-button"/>
+
+                <Button fx:id="deleteQuizButton"
+                        text="Supprimer le quiz"
+                        onAction="#handleDeleteQuiz"
+                        prefWidth="200"
+                        styleClass="secondary-button"/>
+            </HBox>
+
+            <!-- Message -->
+            <Label fx:id="messageLabel"
+                   styleClass="message-label"/>
+
+        </VBox>
+    </center>
+
+</BorderPane>

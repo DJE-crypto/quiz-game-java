@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.quizapp.RegisterController"
+            styleClass="main-pane">
+
+    <center>
+        <!-- carte + style spécial auth -->
+        <VBox spacing="15" alignment="CENTER" styleClass="card auth-card">
+            <padding>
+                <Insets top="25" right="30" bottom="25" left="30"/>
+            </padding>
+
+            <!-- Titre -->
+            <Label text="Créer un compte"
+                   styleClass="title-label"/>
+
+            <!-- Texte de présentation -->
+            <Label text="Remplissez les informations ci-dessous pour créer votre compte et commencer à jouer aux quiz."
+                   styleClass="body-text"
+                   wrapText="true"/>
+
+            <!-- Nom -->
+            <TextField fx:id="nameField"
+                       promptText="Nom complet"
+                       maxWidth="280"/>
+
+            <!-- Email -->
+            <TextField fx:id="emailField"
+                       promptText="Email"
+                       maxWidth="280"/>
+
+            <!-- Mot de passe -->
+            <PasswordField fx:id="passwordField"
+                           promptText="Mot de passe"
+                           maxWidth="280"/>
+
+            <!-- Confirmation -->
+            <PasswordField fx:id="confirmPasswordField"
+                           promptText="Confirmer le mot de passe"
+                           maxWidth="280"/>
+
+            <!-- Bouton créer compte -->
+            <Button fx:id="registerButton"
+                    text="Créer mon compte"
+                    onAction="#handleRegister"
+                    maxWidth="220"/>
+
+            <!-- Lien retour connexion -->
+            <Hyperlink text="Déjà un compte ? Se connecter"
+                       onAction="#handleBackToLogin"
+                       styleClass="link-text"/>
+
+            <!-- Message info / erreur -->
+            <Label fx:id="messageLabel"
+                   styleClass="message-label"/>
+        </VBox>
+    </center>
+
+</BorderPane>

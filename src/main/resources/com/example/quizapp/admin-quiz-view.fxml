@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.quizapp.AdminQuizController"
+            styleClass="main-pane">
+
+    <!-- CENTRE : tout le formulaire dans une "carte" comme la page de login -->
+    <center>
+        <VBox alignment="TOP_CENTER"
+              spacing="20"
+              styleClass="card auth-card">
+            <padding>
+                <Insets top="20" right="40" bottom="20" left="40"/>
+            </padding>
+
+            <!-- Titre général (même style que login) -->
+            <Label text="Création d'un quiz"
+                   styleClass="title-label"/>
+
+            <!-- Formulaire sous forme de grille -->
+            <GridPane hgap="15" vgap="10">
+                <columnConstraints>
+                    <!-- Colonne des labels -->
+                    <ColumnConstraints minWidth="130" halignment="RIGHT"/>
+                    <!-- Colonne des champs -->
+                    <ColumnConstraints minWidth="350" hgrow="ALWAYS"/>
+                </columnConstraints>
+
+                <children>
+                    <!-- ===== Ligne 0 : titre du quiz ===== -->
+                    <Label text="Titre du quiz :" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                    <TextField fx:id="quizTitleField"
+                               promptText="Titre du quiz"
+                               GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+                    <!-- ===== Ligne 1 : thème ===== -->
+                    <Label text="Thème :" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                    <ComboBox fx:id="themeComboBox"
+                              prefWidth="250"
+                              promptText="Choisissez un thème"
+                              GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                    <!-- Séparateur -->
+                    <Separator GridPane.rowIndex="2" GridPane.columnIndex="0" GridPane.columnSpan="2"/>
+
+                    <!-- ===== Ligne 3 : question ===== -->
+                    <Label text="Question :" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+                    <TextArea fx:id="questionField"
+                              promptText="Texte de la question"
+                              prefRowCount="3"
+                              GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+                    <!-- ===== Lignes 4–7 : choix ===== -->
+                    <Label text="Choix 1 :" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+                    <TextField fx:id="choice1Field"
+                               promptText="Choix 1"
+                               GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+
+                    <Label text="Choix 2 :" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+                    <TextField fx:id="choice2Field"
+                               promptText="Choix 2"
+                               GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+
+                    <Label text="Choix 3 :" GridPane.rowIndex="6" GridPane.columnIndex="0"/>
+                    <TextField fx:id="choice3Field"
+                               promptText="Choix 3"
+                               GridPane.rowIndex="6" GridPane.columnIndex="1"/>
+
+                    <Label text="Choix 4 :" GridPane.rowIndex="7" GridPane.columnIndex="0"/>
+                    <TextField fx:id="choice4Field"
+                               promptText="Choix 4"
+                               GridPane.rowIndex="7" GridPane.columnIndex="1"/>
+
+                    <!-- ===== Ligne 8 : bonne réponse ===== -->
+                    <Label text="Bonne réponse :" GridPane.rowIndex="8" GridPane.columnIndex="0"/>
+                    <HBox spacing="15" GridPane.rowIndex="8" GridPane.columnIndex="1">
+                        <children>
+                            <RadioButton fx:id="rbCorrect1" text="1"/>
+                            <RadioButton fx:id="rbCorrect2" text="2"/>
+                            <RadioButton fx:id="rbCorrect3" text="3"/>
+                            <RadioButton fx:id="rbCorrect4" text="4"/>
+                        </children>
+                    </HBox>
+
+                    <!-- ===== Ligne 9 : difficulté ===== -->
+                    <Label text="Difficulté :" GridPane.rowIndex="9" GridPane.columnIndex="0"/>
+                    <HBox spacing="15" GridPane.rowIndex="9" GridPane.columnIndex="1">
+                        <children>
+                            <RadioButton fx:id="rbEasy" text="Facile"/>
+                            <RadioButton fx:id="rbMedium" text="Moyenne"/>
+                            <RadioButton fx:id="rbHard" text="Difficile"/>
+                        </children>
+                    </HBox>
+                </children>
+            </GridPane>
+        </VBox>
+    </center>
+
+    <!-- BAS : boutons + message -->
+    <bottom>
+        <VBox spacing="8">
+            <padding>
+                <Insets top="10" right="40" bottom="15" left="40"/>
+            </padding>
+
+            <HBox alignment="CENTER_RIGHT" spacing="10">
+                <children>
+                    <Button text="Retour au menu"
+                            onAction="#handleBackToMenu"/>
+
+                    <Button text="Ajouter la question"
+                            onAction="#handleAddQuestion"/>
+
+                    <Button text="Enregistrer le quiz"
+                            onAction="#handleSaveQuiz"
+                            defaultButton="true"/>
+                </children>
+            </HBox>
+
+            <Label fx:id="messageLabel"
+                   style="-fx-text-fill: #e74c3c; -fx-font-size: 12px;"/>
+        </VBox>
+    </bottom>
+
+</BorderPane>

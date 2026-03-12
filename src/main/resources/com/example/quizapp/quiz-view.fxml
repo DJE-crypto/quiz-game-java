@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.quizapp.QuizController"
+            styleClass="main-pane">
+
+    <!-- Haut : titre + numéro + timer dans une carte -->
+    <top>
+        <VBox spacing="4" styleClass="card header-card">
+            <padding>
+                <Insets top="10" right="15" bottom="10" left="15"/>
+            </padding>
+
+            <!-- Titre du quiz -->
+            <Label fx:id="quizTitleLabel"
+                   styleClass="title-label"/>
+
+            <!-- Progression : "Question 1 / 10" -->
+            <Label fx:id="progressLabel"
+                   styleClass="subtitle-label"/>
+
+            <!-- Timer (stylé via l'id #timerLabel dans le CSS) -->
+            <Label fx:id="timerLabel"
+                   id="timerLabel"
+                   text="Temps restant : 10 s"/>
+        </VBox>
+    </top>
+
+    <!-- Centre : question + réponses dans une carte -->
+    <center>
+        <VBox spacing="12"
+              alignment="TOP_LEFT"
+              styleClass="card auth-card">
+            <padding>
+                <Insets top="15" right="20" bottom="15" left="20"/>
+            </padding>
+
+            <!-- Question -->
+            <Label fx:id="questionLabel"
+                   wrapText="true"
+                   styleClass="question-label"/>
+
+            <!-- Choix -->
+            <VBox spacing="8">
+                <RadioButton fx:id="choice1"/>
+                <RadioButton fx:id="choice2"/>
+                <RadioButton fx:id="choice3"/>
+                <RadioButton fx:id="choice4"/>
+            </VBox>
+        </VBox>
+    </center>
+
+    <!-- Bas : bouton Suivant + message -->
+    <bottom>
+        <VBox spacing="5" alignment="CENTER">
+            <padding>
+                <Insets top="10" right="10" bottom="15" left="10"/>
+            </padding>
+
+            <Button fx:id="nextButton"
+                    text="Suivant"
+                    onAction="#handleNext"
+                    prefWidth="160"/>
+
+            <Label fx:id="messageLabel"
+                   styleClass="message-label"/>
+        </VBox>
+    </bottom>
+
+</BorderPane>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.quizapp.ResultController"
+            styleClass="main-pane">
+
+    <top>
+        <VBox spacing="10" alignment="CENTER">
+            <padding>
+                <Insets top="20" right="20" bottom="10" left="20"/>
+            </padding>
+            <Label text="Résultat du quiz"
+                   styleClass="title-label"/>
+            <Label fx:id="quizTitleLabel"
+                   styleClass="subtitle-label"/>
+        </VBox>
+    </top>
+
+    <center>
+        <VBox spacing="10" alignment="CENTER">
+            <padding>
+                <Insets top="10" right="20" bottom="10" left="20"/>
+            </padding>
+            <Label fx:id="scoreLabel"
+                   styleClass="subtitle-label"/>
+            <Label fx:id="detailLabel"
+                   styleClass="message-label"/>
+        </VBox>
+    </center>
+
+    <bottom>
+        <HBox spacing="10" alignment="CENTER">
+            <padding>
+                <Insets top="10" right="20" bottom="20" left="20"/>
+            </padding>
+            <Button text="Retour au menu"
+                    onAction="#handleBackToMenu"/>
+            <Button text="Quitter"
+                    onAction="#handleExit"
+                    styleClass="secondary-button"/>
+        </HBox>
+    </bottom>
+
+</BorderPane>

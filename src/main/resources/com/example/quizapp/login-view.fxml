@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.quizapp.LoginController"
+            styleClass="main-pane">
+
+    <center>
+        <!-- carte + style spécial auth -->
+        <VBox spacing="15" alignment="CENTER" styleClass="card auth-card">
+            <padding>
+                <Insets top="30" right="30" bottom="30" left="30"/>
+            </padding>
+
+            <!-- Titre -->
+            <Label text="Quiz - Connexion"
+                   styleClass="title-label"/>
+
+            <!-- Petit texte de présentation -->
+            <Label text="Connectez-vous pour accéder aux différents quiz proposés."
+                   styleClass="body-text"
+                   wrapText="true"/>
+
+            <!-- Email -->
+            <TextField fx:id="emailField"
+                       promptText="Email"
+                       maxWidth="280"/>
+
+            <!-- Mot de passe -->
+            <PasswordField fx:id="passwordField"
+                           promptText="Mot de passe"
+                           maxWidth="280"/>
+
+            <!-- Bouton se connecter -->
+            <Button fx:id="loginButton"
+                    text="Se connecter"
+                    onAction="#handleLogin"
+                    maxWidth="200"/>
+
+            <!-- Lien vers la création de compte -->
+            <Hyperlink text="Créer un compte"
+                       onAction="#handleOpenRegister"
+                       styleClass="link-text"/>
+
+            <!-- Message d'erreur / info -->
+            <Label fx:id="messageLabel"
+                   styleClass="message-label"/>
+        </VBox>
+    </center>
+
+</BorderPane>

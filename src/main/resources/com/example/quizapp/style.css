@@ -1,0 +1,226 @@
+/* ================== GLOBAL ================== */
+
+.root {
+    -fx-font-family: "Segoe UI", "Roboto", "Arial";
+}
+
+/* Fond général de la fenêtre */
+.main-pane {
+    /* Fond sombre / pro */
+    -fx-background-color: linear-gradient(to bottom, #0f172a, #111827);
+    -fx-padding: 30;
+}
+
+}
+
+/* Carte blanche (login, menu, quiz, admin…) */
+.card {
+    -fx-background-color: #e5edff;          /* bleu très clair au lieu de blanc */
+    -fx-background-radius: 24;
+    -fx-padding: 28 40 28 40;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.18), 18, 0.25, 0, 4);
+}
+
+
+/* ================== TEXTES ================== */
+
+.title-label {
+    -fx-font-size: 26px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+}
+
+.subtitle-label {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #34495e;
+}
+
+/* Texte de présentation sous le “Bienvenue, Admin” */
+.body-text {
+    -fx-font-size: 13px;
+    -fx-text-fill: #5f6c7b;
+}
+
+.question-label {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #222222;
+}
+
+/* Message d'erreur / info */
+.message-label {
+    -fx-font-size: 12px;
+    -fx-text-fill: #e74c3c;
+}
+
+/* ================== BOUTONS ================== */
+
+.button {
+    -fx-background-color: #2d63f7;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 20;
+    -fx-padding: 8 26 8 26;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.18), 10, 0.25, 0, 3);
+}
+
+.button:hover {
+    -fx-background-color: #244fd0;
+}
+
+.button:pressed {
+    -fx-background-color: #1b3fa5;
+    -fx-effect: none;
+}
+
+.button:disabled {
+    -fx-background-color: #d6defa;
+    -fx-text-fill: #8fa0d0;
+}
+
+/* Bouton secondaire (Créer un quiz…) */
+.secondary-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #2d63f7;
+    -fx-font-weight: bold;
+    -fx-border-color: #2d63f7;
+    -fx-border-width: 1;
+    -fx-border-radius: 20;
+    -fx-background-radius: 20;
+    -fx-padding: 7 22 7 22;
+}
+
+.secondary-button:hover {
+    -fx-background-color: rgba(45, 99, 247, 0.06);
+}
+
+/* ================== CHAMPS DE TEXTE ================== */
+
+.text-field,
+.password-field,
+.text-area {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 10;
+    -fx-border-color: #cfd8dc;
+    -fx-border-radius: 10;
+    -fx-padding: 8 10 8 10;
+    -fx-font-size: 13px;
+}
+
+.text-field:focused,
+.password-field:focused,
+.text-area:focused {
+    -fx-border-color: #2962ff;
+    -fx-effect: dropshadow(gaussian, rgba(41,98,255,0.35), 12, 0.3, 0, 2);
+}
+
+/* ================== COMBOBOX & LISTVIEW ================== */
+
+/* “boîte” fermée de la ComboBox */
+.combo-box-base {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 10;
+    -fx-border-color: #cfd8dc;
+    -fx-border-radius: 10;
+    -fx-padding: 4 10 4 10;
+}
+
+.combo-box-base:focused {
+    -fx-border-color: #2962ff;
+    -fx-effect: dropshadow(gaussian, rgba(41,98,255,0.25), 10, 0.2, 0, 2);
+}
+
+/* Zone déroulante + ListView */
+.list-view,
+.combo-box-popup .list-view {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 10;
+    -fx-padding: 4 0 4 0;
+}
+
+/* Cellules normales */
+.list-cell {
+    -fx-padding: 8 12 8 12;
+    -fx-font-size: 13px;
+    -fx-background-color: transparent;
+    -fx-text-fill: #2c3e50;
+}
+
+/* Survol */
+.list-cell:hover {
+    -fx-background-color: #eef3ff;
+}
+
+/* Sélection */
+.list-cell:filled:selected,
+.list-cell:filled:selected:focused {
+    -fx-background-color: #dde7ff;
+    -fx-text-fill: #1f3c88;
+}
+
+/* ================== RADIOBUTTONS ================== */
+
+.radio-button {
+    -fx-font-size: 13px;
+    -fx-text-fill: #333333;
+}
+
+/* ================== TIMER ================== */
+
+#timerLabel {
+    -fx-font-size: 14px;
+    -fx-text-fill: #e67e22;
+    -fx-font-weight: bold;
+}
+
+/* ================== FORMULAIRES AUTH (Login / Register) ================== */
+
+/* Carte spéciale pour login / register */
+.auth-card {
+    -fx-max-width: 460;
+    -fx-background-radius: 28;
+    -fx-padding: 36 46 32 46;
+    -fx-spacing: 16;
+}
+
+/* Texte lien “Déjà un compte ? Se connecter” */
+.link-text {
+    -fx-text-fill: #2962ff;
+    -fx-font-size: 12px;
+}
+
+.link-text:hover {
+    -fx-underline: true;
+}
+/* ===== Lisibilité générale du texte ===== */
+
+/* Tous les labels par défaut : texte clair sur fond sombre */
+.label {
+    -fx-text-fill: #f5f5f5;   /* presque blanc */
+}
+
+/* Labels dans les cartes (formulaires, quiz, menu, etc.) */
+.card .label {
+    -fx-text-fill: #f5f5f5;
+}
+
+/* RadioButton (Bonne réponse, Difficulté, etc.) */
+.radio-button {
+    -fx-text-fill: #f5f5f5;
+}
+
+/* Texte à l'intérieur des champs (fond blanc) */
+.text-field,
+.password-field,
+.text-area {
+    -fx-text-fill: #111111;       /* texte bien foncé */
+    -fx-prompt-text-fill: #7a7a7a;/* texte "Choix 1", "Texte de la question", etc. */
+}
+
+/* Texte du ComboBox */
+.combo-box-base .text {
+    -fx-fill: #111111;            /* texte foncé sur fond clair */
+}
